@@ -12,9 +12,9 @@ Flask Tao Translator 是一個利用 Flask 框架構建的簡單翻譯工具，�
 
 ## 目錄結構
 flask-tao-translator/
-1. app.py              # Flask 應用主文件
-2. templates/          # HTML 文件
-2.1 index.html     # 前端模板
-4. static/             # 靜態文件（圖片、CSS 等）
-5.  requirements.txt    # 依賴項列表
-6.  README.md           # 專案簡介
+- app.py              # Flask 應用主文件
+- templates/          # HTML 文件
+-- index.html     # 前端模板
+- static/             # 靜態文件（圖片、CSS 等）
+-  requirements.txt    # 依賴項列表
+-  README.md           # 專案簡介
