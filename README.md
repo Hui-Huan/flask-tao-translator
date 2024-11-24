@@ -14,7 +14,11 @@ Flask Tao Translator 是一個利用 Flask 框架構建的簡單翻譯工具，�
 flask-tao-translator/
 - app.py              # Flask 應用主文件
 - templates/          # HTML 文件
--- index.html     # 前端模板
-- static/             # 靜態文件（圖片、CSS 等）
+-- index.html         # 前端模板
+- trained-model        # 存放訓練好的 NLP 模型文件
+-- config.json         # 模型的配置文件
+-- pytorch_model.bin   # 訓練好的模型權重
+-- vocab.json          # 模型的詞彙表
+- static/               # 靜態文件（圖片、CSS 等）
 -  requirements.txt    # 依賴項列表
 -  README.md           # 專案簡介
