@@ -31,7 +31,7 @@ def home():
 
         if not tao_sentence:
             # 如果沒有輸入，返回錯誤消息
-            return render_template("index3.html", error="請提供有效的達悟語文本")
+            return render_template("index.html", error="請提供有效的達悟語文本")
 
         try:
             # 使用模型進行翻譯
@@ -40,14 +40,14 @@ def home():
             translation = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
             # 渲染結果到模板
-            return render_template("index3.html", translation=translation, tao_sentence=tao_sentence)
+            return render_template("index.html", translation=translation, tao_sentence=tao_sentence)
 
         except Exception as e:
             # 返回錯誤信息
-            return render_template("index3.html", error=str(e))
+            return render_template("index.html", error=str(e))
 
     # 如果是 GET 請求，渲染空表單
-    return render_template("index3.html")
+    return render_template("index.html")
 # 主程序入口
 if __name__ == "__main__":
     app.run(debug=True, port=3000)
