@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>達悟語-中文翻譯工具</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>達悟語-中文翻譯工具</h1>
+        <form id="translate_form">
+            <label for="tao_input">達悟語文本：</label>
+            <textarea id="tao_input" placeholder="輸入達悟語文本..." required></textarea>
+            <button type="button" onclick="translate()">翻譯</button>
+        </form>
+        <div id="result_container">
+            <label for="translation_result">中文翻譯結果：</label>
+            <textarea id="translation_result" readonly></textarea>
+        </div>
+    </div>
+
+    <script>
+        async function translate() {
+            const tao_sentence = document.getElementById("tao_input").value.trim();
+
+            if (!tao_sentence) {
+                alert("請輸入達悟語...");
+                return;
+            }
+
+            try {
+                // 發送翻譯請求到後端
+                const response = await fetch("http://127.0.0.1:5000/translate", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ tao_sentence })
+                });
+
+                // 處理後端返回數據
+                const data = await response.json();
+                const result_element = document.getElementById("translation_result");
+
+                if (data.translation) {
+                    result_element.value = data.translation;
+                } else {
+                    result_element.value = "翻譯失敗：" + (data.error || "未找到結果");
+                }
+            } catch (error) {
+                // 處理網絡或伺服器錯誤
+                document.getElementById("translation_result").value = "發生錯誤：" + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
+
+
