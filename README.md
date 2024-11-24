@@ -5,11 +5,4 @@ Flask Tao Translator 是一個基於 Flask 框架構建的簡單翻譯工具，�
 
 ## 功能
 - 翻譯達悟語到中文
-- 提供一個簡單的前端用戶界面進行輸入和查看結果
-
-## 安裝與運行
-
-### 1. 克隆存儲庫
-```bash
-git clone https://github.com/<your-username>/flask-tao-translator.git
-cd flask-tao-translator
+- 提供一個簡單的前端達悟語到中文翻譯查詢用戶界面進行輸入和查看結果
