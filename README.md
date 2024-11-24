@@ -6,3 +6,16 @@ Flask Tao Translator 是一個利用 Flask 框架構建的簡單翻譯工具，�
 ## 功能
 - 翻譯達悟語到中文
 - 提供一個簡單的前端達悟語到中文翻譯查詢用戶界面進行輸入和查看結果
+
+## 部署
+您可以使用 Heroku 或 Render 等平台來部署應用，詳細步驟請參考專案文檔。
+
+## 目錄結構
+flask-tao-translator/
+│
+├── app.py              # Flask 應用主文件
+├── templates/          # HTML 文件
+│   └── index3.html     # 前端模板
+├── static/             # 靜態文件（圖片、CSS 等）
+├── requirements.txt    # 依賴項列表
+├── README.md           # 專案簡介
